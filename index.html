@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="GradeCheck(event)">
+
+        Enter Your marks  : <input id="marksinput" type="number" required step="0.01">
+        <br>
+        <button>Grade Check</button>
+ </form>
+ <h1 id="Result"></h1>
+
+<script>
+ function GradeCheck (event) {
+
+    event.preventDefault();
+
+    let marksinput= document.querySelector("#marksinput").value;
+    marksinput = Number(marksinput)
+    console.log(marksinput)
+
+    let message="";
+
+    if(marksinput < 40){
+message = " Fail"
+     } else if( marksinput >= 40){
+        message= " E"
+     }else if( marksinput >= 50){
+        message= " D"
+     }else if( marksinput >= 60){
+        message= " C"
+     }else if( marksinput >= 70){
+        message= " B"
+     }else if( marksinput >= 80){
+        message= " A"
+     }else {
+        message= " A+"
+     }
+
+     Document.querySelector("#Result").innerHTML=message
+
+
+
+
+
+    
+ }
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
